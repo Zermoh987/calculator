@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <title>Document</title>
+        <style>
+        .calculatrice{
+            border: 2px solid;
+            border-radius: 7px;
+            width: 120%;
+        }
+        button {
+            padding: 10px;
+            width: 120px;
+            height: 60px;
+            margin-top: 10px;
+            background-color: rgb(194, 194, 194);
+            color: black;
+            font-size: 20px;
+            border-radius: 7px;
+            border: none;
+        }
+        button:hover {
+            border: 2px solid blue;
+        }
+        .output{
+            border: 2px solid;
+            border-radius: 20px;
+            border-color: rgba(81, 81, 207, 0.767);
+            height: 90px;
+            width: 95%;
+            margin: auto;
+            text-align: end;
+            padding-right: 30px;
+        }
+        </style>
+    </head>
+    <body>
+       <div class="container-fluid">
+           <div class="row">
+              <div class="col-lg-4 m-auto">
+                <div class="calculatrice mt-5">
+                    <h2 class="text-primary text-center p-3">CALCULATOR</h2>
+                    <div class="output mt-1">
+                        <img src="téléchargement (1).png" alt="">
+                        <p id="ecran" class="mt-2"></p>
+                        <p id="ecrans" style="font-size: 26px;" class=""></p>
+                    </div>
+                <div class="mb-3" style="text-align: center;">
+                    <div class="first-row">
+                        <button class="calc_btn" id="r1-1" value="(" onclick="fordisplay('(')">(</button>
+                        <button class="calc_btn" id="r1-1" value=")" onclick="fordisplay(')')">)</button>
+                        <button class="calc_btn" id="r1-3" value="%" onclick="perc()">%</button>
+                        <button class="calc_btn" id="r1-4"  value="AC" onclick="forclear()">AC</button>
+                    </div>
+                    <div class="second-row">
+                        <button class="calc_btn bg-light" id="r2-1" value="7" onclick="fordisplay('7')">7</button>
+                        <button class="calc_btn bg-light" id="r2-2" value="8" onclick="fordisplay('8')">8</button>
+                        <button class="calc_btn bg-light" id="r2-3" value="9" onclick="fordisplay('9')">9</button>
+                        <button class="calc_btn" id="r2-4" value="" onclick="fordisplay('/')">&divide;</button>
+                    </div>
+                    <div class="third-row">
+                        <button class="calc_btn bg-light" id="r3-1" value="4" onclick="fordisplay('4')">4</button>
+                        <button class="calc_btn bg-light" id="r3-2" value="5" onclick="fordisplay('5')">5</button>
+                        <button class="calc_btn bg-light" id="r3-3" value="6" onclick="fordisplay('6')">6</button>
+                        <button class="calc_btn" id="r3-4" value="x" onclick="fordisplay('*')">x</button>
+                    </div>
+                    <div class="fourth-row">
+                        <button class="calc_btn bg-light" id="r4-1" value="1" onclick="fordisplay('1')">1</button>
+                        <button class="calc_btn bg-light" id="r4-2" value="2" onclick="fordisplay('2')">2</button>
+                        <button class="calc_btn bg-light" id="r4-3" value="3" onclick="fordisplay('3')">3</button>
+                        <button class="calc_btn" id="r4-4" value="-" onclick="fordisplay('-')">-</button>
+                    </div>
+                    <div class="fifth-row">
+                        <button class="calc_btn bg-light" id="r5-1" value="0" onclick="fordisplay('0')">0</button>
+                        <button class="calc_btn bg-light" id="r5-2" value="." onclick="fordisplay('.')">.</button>
+                        <button class="calc_btn bg-primary" id="r5-3" value="=" onclick="egal()">=</button>
+                        <button class="calc_btn" id="r5-3" value="+" onclick="fordisplay('+')">+</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       </div>
+       <script>
+           function forclear(){
+               document.getElementById('ecran').innerHTML='0';
+           }
+
+           function removeZero(){
+               var value = document.getElementById('ecran').innerHTML;
+               if(value == "0"){
+                   value = ""
+                   document.getElementById('ecran').innerHTML = value;   
+               }
+           }
+
+           function perc(){
+               var value = document.getElementById('ecran').innerHTML;
+               value = value /100;
+               document.getElementById('ecran').innerHTML = value;
+           }
+
+           function fordisplay(myvalue){
+               removeZero()
+               document.getElementById('ecran').innerHTML += myvalue;
+           }
+
+           function egal(){
+               removeZero()
+               var equation = document.getElementById('ecran').innerHTML;
+               var egale = eval(equation);
+               document.getElementById('ecrans').innerHTML = egale;
+           }
+
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity=""></script>
+    </body>
+</html>
