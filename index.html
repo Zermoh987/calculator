@@ -10,11 +10,12 @@
         .calculatrice{
             border: 2px solid;
             border-radius: 7px;
+            margin: auto;
         }
         .calc_btn {
             padding: 10px;
-            width: 95px;
-            height: 50px;
+            width: 23%;
+            height: 5%;
             margin-top: 10px;
             background-color: rgb(194, 194, 194);
             color: black;
@@ -30,73 +31,101 @@
             border-radius: 20px;
             border-color: rgba(81, 81, 207, 0.767);
             height: 85px;
-            width: 400px;
+            width: 95%;
             margin: auto;
             text-align: end;
             padding-right: 30px;
         }
-      
+        @media(max-width: 768px){
+            .calculatrice{
+                width: 60%;
+                margin: auto;
+            }
+        }
+        @media(max-width: 425px){
+            .calculatrice{
+                width: 95%;
+                margin: auto;
+            }
+        }
         </style>
     </head>
     <body>
        <div class="container-fluid">
            <div class="row">
-              <div class="col-lg-4 col-xl-4 col-xxl-4 col-sm-12 col-md-12 m-auto">
+              <div class="col-lg-5 col-xl-5 col-xxl-5 col-sm-12 col-md-12">
                 <div class="calculatrice mt-5">
-                    <h2 class="text-primary text-center p-3">CALCULATOR</h2>
-                    <div class="output mt-1">
-                        <div class="position-absolute hologe-img">
-                            <a type="button" id="horloge-img" onclick="forclear()"><img src="téléchargement (1).png" alt="" style="position: relative; left: 1rem; top: 1rem;"></a>
+
+                    <div class="row">
+                        <div class="col-lg-12 col-xl-12 col-xxl-12 col-sm-12 col-md-12 m-auto">
+                            <h2 class="text-primary text-center p-3">CALCULATOR</h2>
+                            
+                            <div class="output mt-1 d-block">
+                                <div class="position-absolute hologe-img">
+                                    <a type="button" id="horloge-img" onclick="forclear()"><img src="téléchargement (1).png"
+                                        alt="" style="position: relative; left: 1rem; top: 1rem;"></a>
+                                </div>
+                                <p id="ecran" class="mt-2"></p>
+                                <p id="ecrans" style="font-size: 26px;" class="pb-1"></p>
+                            </div>
                         </div>
-                        <p id="ecran" class="mt-2"></p>
-                        <p id="ecrans" style="font-size: 26px;" class=""></p>
                     </div>
-                <div class="mb-3" style="text-align: center;">
-                    <div class="first-row">
-                        <button class="calc_btn" id="r1-1" value="(" onclick="fordisplay('(')">(</button>
-                        <button class="calc_btn" id="r1-1" value=")" onclick="fordisplay(')')">)</button>
-                        <button class="calc_btn" id="r1-3" value="%" onclick="perc()">%</button>
-                        <button class="calc_btn" id="r1-4"  value="AC" onclick="forclear()">AC</button>
-                    </div>
-                    <div class="second-row">
-                        <button class="calc_btn bg-light" id="r2-1" value="7" onclick="fordisplay('7')">7</button>
-                        <button class="calc_btn bg-light" id="r2-2" value="8" onclick="fordisplay('8')">8</button>
-                        <button class="calc_btn bg-light" id="r2-3" value="9" onclick="fordisplay('9')">9</button>
-                        <button class="calc_btn" id="r2-4" value="" onclick="fordisplay('/')">&divide;</button>
-                    </div>
-                    <div class="third-row">
-                        <button class="calc_btn bg-light" id="r3-1" value="4" onclick="fordisplay('4')">4</button>
-                        <button class="calc_btn bg-light" id="r3-2" value="5" onclick="fordisplay('5')">5</button>
-                        <button class="calc_btn bg-light" id="r3-3" value="6" onclick="fordisplay('6')">6</button>
-                        <button class="calc_btn" id="r3-4" value="x" onclick="fordisplay('*')">x</button>
-                    </div>
-                    <div class="fourth-row">
-                        <button class="calc_btn bg-light" id="r4-1" value="1" onclick="fordisplay('1')">1</button>
-                        <button class="calc_btn bg-light" id="r4-2" value="2" onclick="fordisplay('2')">2</button>
-                        <button class="calc_btn bg-light" id="r4-3" value="3" onclick="fordisplay('3')">3</button>
-                        <button class="calc_btn" id="r4-4" value="-" onclick="fordisplay('-')">-</button>
-                    </div>
-                    <div class="fifth-row">
-                        <button class="calc_btn bg-light" id="r5-1" value="0" onclick="fordisplay('0')">0</button>
-                        <button class="calc_btn bg-light" id="r5-2" value="." onclick="fordisplay('.')">.</button>
-                        <button class="calc_btn bg-primary" id="r5-3" value="=" onclick="egal()">=</button>
-                        <button class="calc_btn" id="r5-3" value="+" onclick="fordisplay('+')">+</button>
+    
+                    <div class="row">
+                        <div class="col-lg-12 col-xl-12 col-xxl-12 col-sm-12 col-md-12 m-auto">
+                            <div class="mb-3" style="text-align: center;">
+                                <div class="first-row">
+                                    <button class="calc_btn" id="r1-1" value="(" onclick="fordisplay('(')">(</button>
+                                    <button class="calc_btn" id="r1-1" value=")" onclick="fordisplay(')')">)</button>
+                                    <button class="calc_btn" id="r1-3" value="%" onclick="perc()">%</button>
+                                    <button class="calc_btn" id="r1-4"  value="AC" onclick="forclear()">AC</button>
+                                </div>
+                                <div class="second-row">
+                                    <button class="calc_btn bg-light" id="r2-1" value="7" onclick="fordisplay('7')">7</button>
+                                    <button class="calc_btn bg-light" id="r2-2" value="8" onclick="fordisplay('8')">8</button>
+                                    <button class="calc_btn bg-light" id="r2-3" value="9" onclick="fordisplay('9')">9</button>
+                                    <button class="calc_btn" id="r2-4" value="" onclick="fordisplay('/')">&divide;</button>
+                                </div>
+                                <div class="third-row">
+                                    <button class="calc_btn bg-light" id="r3-1" value="4" onclick="fordisplay('4')">4</button>
+                                    <button class="calc_btn bg-light" id="r3-2" value="5" onclick="fordisplay('5')">5</button>
+                                    <button class="calc_btn bg-light" id="r3-3" value="6" onclick="fordisplay('6')">6</button>
+                                    <button class="calc_btn" id="r3-4" value="x" onclick="fordisplay('*')">x</button>
+                                </div>
+                                <div class="fourth-row">
+                                    <button class="calc_btn bg-light" id="r4-1" value="1" onclick="fordisplay('1')">1</button>
+                                    <button class="calc_btn bg-light" id="r4-2" value="2" onclick="fordisplay('2')">2</button>
+                                    <button class="calc_btn bg-light" id="r4-3" value="3" onclick="fordisplay('3')">3</button>
+                                    <button class="calc_btn" id="r4-4" value="-" onclick="fordisplay('-')">-</button>
+                                </div>
+                                <div class="fifth-row">
+                                    <button class="calc_btn bg-light" id="r5-1" value="0" onclick="fordisplay('0')">0</button>
+                                    <button class="calc_btn bg-light" id="r5-2" value="." onclick="fordisplay('.')">.</button>
+                                    <button class="calc_btn bg-primary" id="r5-3" value="=" onclick="egal()">=</button>
+                                    <button class="calc_btn" id="r5-3" value="+" onclick="fordisplay('+')">+</button>
+                                </div>
+                            </div>
+                      </div>
                     </div>
                 </div>
               </div>
-            </div>
           </div>
        </div>
        <script>
            function forclear(){
                document.getElementById('ecran').innerHTML='0';
+               document.getElementById('ecrans').innerHTML='';
            }
 
            function removeZero(){
                var value = document.getElementById('ecran').innerHTML;
+            //    var value1 = document.getElementById('ecrans').innerHTML;
+               
                if(value == "0"){
                    value = ""
+                //    value1 = ""
                    document.getElementById('ecran').innerHTML = value;   
+                   document.getElementById('ecrans').innerHTML = value;   
                }
            }
 
