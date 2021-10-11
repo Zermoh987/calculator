@@ -11,6 +11,7 @@
             border: 2px solid;
             border-radius: 7px;
             margin: auto;
+            width: 80%;
         }
         .calc_btn {
             padding: 10px;
@@ -101,9 +102,10 @@
                                 <div class="fifth-row">
                                     <button class="calc_btn bg-light" id="r5-1" value="0" onclick="fordisplay('0')">0</button>
                                     <button class="calc_btn bg-light" id="r5-2" value="." onclick="fordisplay('.')">.</button>
-                                    <button class="calc_btn bg-primary" id="r5-3" value="=" onclick="egal()">=</button>
+                                    <button class="calc_btn bg-danger text-light" id="r5-3" value="" onclick="deleted()">Del</button>
                                     <button class="calc_btn" id="r5-3" value="+" onclick="fordisplay('+')">+</button>
                                 </div>
+                                <button class="calc_btn bg-primary" style="width: 95%;" id="r5-3" value="" onclick="egal()">=</button>
                             </div>
                       </div>
                     </div>
@@ -145,6 +147,8 @@
                var equation = document.getElementById('ecran').innerHTML;
                var egale = eval(equation);
                document.getElementById('ecrans').innerHTML = egale;
+           }
+           function deleted(){
            }
 
         </script>
